@@ -7,6 +7,9 @@ def echo(text)
   text
 end
 
+def stop_words
+  %w[a b c]
+end
 
 def shout(text)
   text.upcase
