@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-def vowels
-  %w[a e i o u]
+def vowels?(letter)
+  %w[a e i o u].include?(letter)
 end
 
 def consonant_count(word)
-  return 0 if vowels.include?(word.chars.first)
-  return 2 + consonant_count(word[2..])  if word.start_with?('qu')
-  1 + consonant_count(word[1..])
+  return 2 + consonant_count(word[2..]) if word.start_with?('qu')
+  return 1 + consonant_count(word[1..]) unless vowels?(word.chars.first)
+  0
 end
 
 def first_consonant_phoneme(word)
